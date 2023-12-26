@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const { createServer } = require('node:http');
 const { Server } = require('socket.io');
@@ -12,7 +14,7 @@ const usermodel= require('./model/usermodel');
 
 async function main() {
     try {
-        await mongoose.connect('mongodb+srv://maulikkansara04:Tp9v7ZmONEJMBwIY@cluster0.4qikkrc.mongodb.net/Cluster0?retryWrites=true&w=majority');
+        await mongoose.connect(process.env.dbUri);
         console.log('connected to db');
         const app = express();
         const server = createServer(app);
