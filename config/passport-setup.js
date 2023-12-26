@@ -1,7 +1,7 @@
 const passport = require('passport');
 const googlestrategy = require('passport-google-oauth20');
 const model = require('../model/usermodel');
-
+require('dotenv').config();
 passport.serializeUser((user,done)=>{
     done(null,user._id);
 })
@@ -18,8 +18,8 @@ passport.deserializeUser(async (id,done)=>{
 
 passport.use(new googlestrategy({
     callbackURL: '/auth/google/redirect',
-    clientID: '995618359295-vqg949oijegopr99am5pkhm10ejb2od3.apps.googleusercontent.com',
-    clientSecret: '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'
+    clientID: process.env.clientID,
+    clientSecret: process.env.clientSecret
 },
    async (accessToken, refreshToken, profile, done)=>{
         const currentuser = await model.findOne({googleid:profile.id});
