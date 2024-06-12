@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users Page</title>
+    <link rel="stylesheet" href="dashboard_style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="user-list">
+                <h1>Users</h1>
+                <div class="user-buttons">
+                    <% users.forEach(user => { %>
+                        <button class="user-button" data-recipient-id="<%= user._id %>" onclick="selectUser('<%= user._id %>' , '<%= userid %>')"><%= user.username %></button>
+                    <% }); %>
+                </div>
+                <a class="logout-button" href="auth/logout">Logout</a>
+            </div>
+            <div class="chat-area">
+                <div class="welcome-message" id="welcome-message">
+                    <h2>Welcome, <%= username %>!</h2>
+                    <p>Please select a chat to start messaging.</p>
+                </div>
+                <div id="chat-area" class="hidden">
+                    <div class="chat-messages" id="chat-messages">
+                    </div>
+                    <div class="chat-input">
+                        <input type="text" id="message-input" placeholder="Type a message">
+                        <button id="send-button" onclick="sendMessage()">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>

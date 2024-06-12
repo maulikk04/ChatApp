@@ -1,0 +1,181 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0f7fa;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.content {
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+}
+
+.user-list {
+    flex: 1;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-list h1 {
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.user-buttons {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+}
+
+.user-button {
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.user-button:hover {
+    background-color: #0056b3;
+}
+
+.user-button.active {
+    background-color: #0056b3;
+}
+
+.logout-button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    text-align: center;
+}
+
+.logout-button:hover {
+    background-color: #c82333;
+}
+
+.chat-area {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    overflow: auto; 
+    position: relative;
+}
+
+.welcome-message {
+    padding: 40px;
+    text-align: center;
+}
+
+.welcome-message h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.welcome-message p {
+    color: #555;
+    font-size: 18px;
+}
+
+#chat-area.hidden {
+    display: none;
+}
+
+#welcome-message.hidden {
+    display: none;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y:auto;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.chat-input {
+    padding: 20px;
+    display:flex;
+    border-top: 1px solid #ddd;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+
+}
+
+#message-input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    box-sizing: border-box;
+}
+
+.chat-input button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 70%;
+}
+
+.message-sent {
+    background-color: #e0f7fa;
+    align-self: flex-end;
+}
+
+.message-received {
+    background-color: #d1e7dd;
+    align-self: flex-start;
+}
+
