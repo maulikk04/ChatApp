@@ -57,6 +57,21 @@ h2 {
     color: #555;
 }
 
+.forgot-password {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.forgot-password a{
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.forgot-password a :hover{
+    text-decoration: underline;
+}
+
 button {
     width: 100%;
     padding: 10px;

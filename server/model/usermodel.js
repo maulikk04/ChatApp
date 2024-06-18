@@ -20,7 +20,25 @@ const userschema = new schema({
         validate: [isEmail, 'Enter a valid email']
     },
     password:{
-        type:String
+        type:String,
+        validate(value){
+            let lower = false, upper=false, number=false,symbol = false;
+            for(let v of value){
+                if(v.charCodeAt(0) >= 97 && v.charCodeAt(0) <= 122)
+                    lower=true;
+                else if(v.charCodeAt(0)>=65 && v.charCodeAt(0)<=90)
+                    upper=true;
+                else if(v.charCodeAt(0)>=48 && v.charCodeAt(0)<=57)
+                    number = true;
+                else 
+                    symbol = true;
+            }
+
+            if(!lower || !upper || !number || !symbol)
+                throw new Error("Password must contain atleast one lowercase letter, one uppercase letter, one number and one symbol")
+            if(value.length < 6)
+                throw new Error("Password must be of minimum of length 6")
+        }
     },
     confirmpassword:{
         type:String
