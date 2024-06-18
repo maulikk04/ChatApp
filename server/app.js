@@ -44,6 +44,12 @@ async function start() {
                 console.log(error);
             }
         })
+        app.get('/forgot-password', (req,res)=>{
+            res.render('forgot-password');
+        })
+        app.get('/reset-password', (req,res)=>{
+            res.render('reset-password');
+        })
         app.use('/auth', authroutes);
         io.on('connection', (socket) => {
             console.log('A user connected');

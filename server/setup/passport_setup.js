@@ -22,7 +22,7 @@ passport.use(new googglestrategy({
             if (findUser) {
                 return done(null, findUser); 
             }
-    
+            
             const newUser = new detail({
                 username: profile.name.givenName,
                 googleid: profile.id

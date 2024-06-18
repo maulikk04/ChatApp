@@ -4,6 +4,12 @@ function togglePassword() {
     password.setAttribute('type', type);
 }
 
+function toggleConfirmPassword() {
+    const password = document.getElementById('confirmpassword');
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+}
+
 document.getElementById('register-form').addEventListener('submit', async function (e) {
     e.preventDefault();
     const username = document.getElementById('username').value;
